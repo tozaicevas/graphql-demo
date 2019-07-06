@@ -6,7 +6,9 @@ import com.aeroplane.demo.model.Contract;
 import com.aeroplane.demo.repository.BrokerRepository;
 import com.aeroplane.demo.repository.ContractRepository;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Mutation implements GraphQLMutationResolver {
     private BrokerRepository brokerRepository;
     private ContractRepository contractRepository;

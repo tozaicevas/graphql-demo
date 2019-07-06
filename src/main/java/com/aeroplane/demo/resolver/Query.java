@@ -5,7 +5,9 @@ import com.aeroplane.demo.model.Contract;
 import com.aeroplane.demo.repository.BrokerRepository;
 import com.aeroplane.demo.repository.ContractRepository;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Query implements GraphQLQueryResolver {
     private BrokerRepository brokerRepository;
     private ContractRepository contractRepository;
@@ -20,7 +22,7 @@ public class Query implements GraphQLQueryResolver {
     }
 
     public Broker findBrokerById(long id) {
-        return brokerRepository.getOne(id);
+        return brokerRepository.findById(id).get();
     }
 
     public Iterable<Contract> findAllContracts() {
