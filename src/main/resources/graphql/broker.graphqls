@@ -1,0 +1,21 @@
+type Broker {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    contract: Contract
+}
+
+input BrokerData {
+    firstName: String!
+    lastName: String!
+    contract: ID
+}
+
+type Query {
+    findAllBrokers: [Broker!]!
+    findBrokerById(id: ID!): Broker
+}
+
+type Mutation {
+    createBroker(brokerData: BrokerData): Broker
+}

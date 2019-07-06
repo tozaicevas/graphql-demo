@@ -1,0 +1,12 @@
+type Contract {
+    id: ID!
+    interest: Float!
+}
+
+extend type Query {
+    findAllContracts: [Contract!]!
+}
+
+extend type Mutation {
+    createContract(interest: Float!): Contract
+}
