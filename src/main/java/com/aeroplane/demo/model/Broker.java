@@ -17,9 +17,9 @@ public class Broker {
     @GeneratedValue
     private long id;
 
-    private String firstName;
-    private String lastName;
-
     @ManyToOne
     private Contract contract;
+
+    private String firstName;
+    private String lastName;
 }
