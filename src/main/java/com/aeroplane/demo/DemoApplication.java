@@ -32,20 +32,4 @@ public class DemoApplication {
 			brokerRepository.save(broker);
 		};
 	}
-
-	@Bean
-	public BrokerResolver brokerResolver(ContractRepository contractRepository) {
-		return new BrokerResolver(contractRepository);
-	}
-
-	@Bean
-	public Mutation mutation(BrokerRepository brokerRepository, ContractRepository contractRepository) {
-		return new Mutation(brokerRepository, contractRepository);
-	}
-
-	@Bean
-	public Query query(BrokerRepository brokerRepository, ContractRepository contractRepository) {
-		return new Query(brokerRepository, contractRepository);
-	}
-
 }
